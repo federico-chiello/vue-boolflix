@@ -45,20 +45,16 @@ input {
     flex-direction: column;
     flex-basis: 200px;
     padding: 20px;
+    height: 480px;
     margin: 10px 20px;
-    height: 360px;
     background: rgb(46, 58, 70);
     text-align: center;
-}
-
-.movie img {
-    max-width: 100%;
 }
 
 .movie h3 {
     margin: 20px 0;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     text-transform: uppercase;
 }
 
