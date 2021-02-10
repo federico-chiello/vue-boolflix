@@ -8,3 +8,13 @@
 // 2. Titolo Originale
 // 3. Lingua
 // 4. Voto
+
+var app = new Vue({
+  el: '#film',
+  data:{
+
+  },
+  methods:{
+    
+  }
+});
