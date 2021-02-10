@@ -18,7 +18,8 @@
   <!-- area artisti -->
   <div id="film">
     <!-- selezione genere -->
-    <input type="text" name="" value="" placeholder="Inserisci il titolo del film o serie tv">
+    <input type="text" name="" value="" placeholder="Inserisci il titolo del film o della serie tv" v-model="textUser" @keyup.enter="searchMovie">
+    <button type="button" name="button">Clicca qui</button>
     <!-- canzone -->
     <div class="movies-container container">
       <div class="movie">

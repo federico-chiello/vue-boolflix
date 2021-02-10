@@ -12,9 +12,25 @@
 var app = new Vue({
   el: '#film',
   data:{
-
+    textUser: '',
+    apikey:'2440848574e245be0482427477ace718',
+    lang:'it-IT'
   },
   methods:{
-    
+    searchMovieTvSeries(){
+      axios
+        .get('https://api.themoviedb.org/3/search/movie', {
+          params:{
+            api_key: this.apikey,
+            language: this.lang,
+            query: this.textUser
+          }
+        })
+        .then((result) =>{
+          console.log(result.data);
+
+        })
+        .catch((error) => alert('ci sono errori'));
+    }
   }
 });

@@ -26,6 +26,10 @@ header img {
     margin-top: 10px;
 }
 
+input {
+  width: 250px;
+}
+
 .movies-container {
     display: flex;
     justify-content: center;
