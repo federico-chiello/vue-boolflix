@@ -18,16 +18,16 @@
   <!-- area artisti -->
   <div id="film">
     <!-- selezione genere -->
-    <input type="text" name="" value="" placeholder="Inserisci il titolo del film o della serie tv" v-model="textUser" @keyup.enter="searchMovie">
-    <button type="button" name="button">Clicca qui</button>
+    <input type="text" name="" value="" placeholder="Inserisci il titolo del film o della serie tv" v-model="textUser" @keyup.enter="searchMovieTvSeries">
+    <button type="button" name="button" @click="searchMovieTvSeries">Cerca</button>
     <!-- canzone -->
     <div class="movies-container container">
-      <div class="movie">
+      <div class="movie" v-for="movie in movies">
         <img src="" alt="">
-        <h3></h3>
-        <h4></h4>
-        <span class="language"></span>
-        <span class="vote"></span>
+        <h3>{{ movie.title }}</h3>
+        <h4>{{ movie.original_title }}</h4>
+        <span class="language">{{ movie.original_language }}</span>
+        <span class="vote">{{ movie.vote_average }}</span>
       </div>
     </div>
   </div>

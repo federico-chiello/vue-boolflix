@@ -14,7 +14,8 @@ var app = new Vue({
   data:{
     textUser: '',
     apikey:'2440848574e245be0482427477ace718',
-    lang:'it-IT'
+    lang:'it-IT',
+    movies:[]
   },
   methods:{
     searchMovieTvSeries(){
@@ -27,8 +28,8 @@ var app = new Vue({
           }
         })
         .then((result) =>{
-          console.log(result.data);
-
+          this.movies = result.data.results;
+          // console.log(this.movies);
         })
         .catch((error) => alert('ci sono errori'));
     }
