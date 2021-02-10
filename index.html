@@ -24,10 +24,17 @@
     <div class="movies-container container">
       <div class="movie" v-for="movie in movies">
         <img src="" alt="">
-        <h3>{{ movie.title }}</h3>
-        <h4>{{ movie.original_title }}</h4>
-        <span class="language">{{ movie.original_language }}</span>
-        <span class="vote">{{ movie.vote_average }}</span>
+        <h3>{{ movie.title }} </h3>
+        <h4>{{ movie.original_title }} </h4>
+        <span class="language">{{ movie.original_language }} </span>
+        <span class="vote">{{ movie.vote_average }} </span>
+      </div>
+      <div class="movie" v-for="serie in seriesTv">
+        <img src="" alt="">
+        <h3> {{serie.name }}</h3>
+        <h4> {{ serie.original_name }}</h4>
+        <span class="language"> {{ serie.original_language }}</span>
+        <span class="vote"> {{ serie.vote_average}}</span>
       </div>
     </div>
   </div>
