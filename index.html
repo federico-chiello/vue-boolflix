@@ -50,7 +50,7 @@
         <h3> {{serie.name }}</h3>
         <p> {{ serie.original_name }}</p>
         <span class="language"> {{ serie.original_language }}</span>
-        <img :src="'img/' + serie.original_language + '.png'" alt="" v-if="flag.includes(serie.original_language)" class="flags">
+        <img :src="'img/' + serie.original_language + '.png'"  alt="" v-if="flag.includes(serie.original_language)" class="flags">
         <img :src="movie.original_language" alt="" v-else>
         <span class="vote"> {{ Math.ceil(serie.vote_average / 2)}} ></span>
         <span :class="starVoteSeries">
