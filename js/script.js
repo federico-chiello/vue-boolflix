@@ -7,7 +7,8 @@ var app = new Vue({
     movies:[],
     seriesTv: [],
     starMovie: [],
-    starSeriesTv: []
+    starSeriesTv: [],
+    flag: ['it', 'en', 'es', 'ja', 'ru']
   },
   methods:{
     searchMovieTvSeries(){
