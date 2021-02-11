@@ -22,6 +22,7 @@ var app = new Vue({
         .then((result) =>{
           this.movies = result.data.results;
           // console.log(this.movies);
+          this.starVoteMovie();
         })
         .catch((error) => alert('ci sono errori'));
         axios
@@ -35,8 +36,21 @@ var app = new Vue({
           .then((result) =>{
             this.seriesTv = result.data.results;
             // console.log(this.movies);
+            this.starVoteSeries();
           })
           .catch((error) => alert('ci sono errori'));
+    },
+    starVoteMovie(){
+      for (var key in this.movies) {
+        this.starMovie.push(Math.ceil((this.movies[key].vote_average / 2)));
+        // console.log(this.starMovie);
+      }
+    },
+    starVoteSeries(){
+      for (var key in this.seriesTv) {
+        this.starSeriesTv.push(Math.ceil((this.seriesTv[key].vote_average / 2)));
+        // console.log(this.starSeriesTv);
+      }
     }
   }
 });

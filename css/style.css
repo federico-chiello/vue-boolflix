@@ -45,7 +45,7 @@ input {
     flex-direction: column;
     flex-basis: 200px;
     padding: 20px;
-    height: 480px;
+    height: 520px;
     margin: 10px 20px;
     background: rgb(46, 58, 70);
     text-align: center;
@@ -58,7 +58,7 @@ input {
 .movie h3 {
     margin: 20px 0;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
 }
 
