@@ -29,7 +29,11 @@
         <h3>{{ movie.title }} </h3>
         <p>{{ movie.original_title }} </p>
         <span class="language">{{ movie.original_language }} </span>
-        <span class="vote">{{ Math.ceil(movie.vote_average) }} <i class="far fa-star"></i> <i class="fas fa-star"></i></span>
+        <span class="vote">{{ Math.ceil(movie.vote_average) }}</span>
+        <span>
+          <i class="fas fa-star" v-for="element in 1"></i>
+          <i class="far fa-star" v-for="element in 5"></i>
+        </span>
       </div>
       <div class="movie" v-for="serie in seriesTv">
         <img src="img/poster.png" v-if="serie.poster_path == null"  alt="" class="poster-empty">
@@ -37,7 +41,11 @@
         <h3> {{serie.name }}</h3>
         <p> {{ serie.original_name }}</p>
         <span class="language"> {{ serie.original_language }}</span>
-        <span class="vote"> {{ Math.ceil(serie.vote_average)}}</span>
+        <span class="vote"> {{ Math.ceil(serie.vote_average)}} ></span>
+        <span>
+          <i class="fas fa-star" v-for="element in 1"></i>
+          <i class="far fa-star" v-for="element in 5"></i>
+        </span>
       </div>
     </div>
   </div>
