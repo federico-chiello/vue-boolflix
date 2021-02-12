@@ -27,43 +27,27 @@
     <!-- / header -->
     <!-- contenitore film e serie tv -->
     <div class="movies-container container">
-      <!-- film-->
-      <div class="movie" v-for="(movie, index) in movies">
+      <!-- film e serie tv-->
+      <div class="movie" v-for="(movie, index) in moviesAndSeries">
         <img src="img/poster.png" v-if="movie.poster_path == null"  alt="" class="poster-empty">
         <img :src="'https://image.tmdb.org/t/p/' + 'w154' + movie.poster_path" alt="" v-else>
-        <h3>{{ movie.title }} </h3>
-        <p>{{ movie.original_title }} </p>
+        <h3>{{ movie.title || movie.name}} </h3>
+        <p>{{ movie.original_title || movie.original_name}} </p>
         <span class="language">{{ movie.original_language }} </span>
         <img :src="'img/' + movie.original_language + '.png'" alt="" v-if="flag.includes(movie.original_language)" class="flags">
         <img :src="movie.original_language" alt="" v-else>
         <span class="vote">{{ Math.ceil(movie.vote_average / 2) }}</span>
-        <span :class="starVoteMovie">
-          <i class="fas fa-star" v-for="element in starMovie[index]"></i>
-          <i class="far fa-star" v-for="element in 5 - starMovie[index]"></i>
+        <span>
+          <i class="fas fa-star" v-for="i in starVote(movie.vote_average)"></i>
+          <i class="far fa-star" v-for="i in 5 - starVote(movie.vote_average)"></i>
         </span>
       </div>
-      <!-- / film-->
-      <!-- serie tv -->
-      <div class="movie" v-for="(serie, index) in seriesTv">
-        <img src="img/poster.png" v-if="serie.poster_path == null"  alt="" class="poster-empty">
-        <img :src="'https://image.tmdb.org/t/p/' + 'w154' + serie.poster_path" alt="" v-else>
-        <h3> {{serie.name }}</h3>
-        <p> {{ serie.original_name }}</p>
-        <span class="language"> {{ serie.original_language }}</span>
-        <img :src="'img/' + serie.original_language + '.png'"  alt="" v-if="flag.includes(serie.original_language)" class="flags">
-        <img :src="movie.original_language" alt="" v-else>
-        <span class="vote"> {{ Math.ceil(serie.vote_average / 2)}} ></span>
-        <span :class="starVoteSeries">
-          <i class="fas fa-star" v-for="element in starSeriesTv[index]"></i>
-          <i class="far fa-star" v-for="element in 5 - starSeriesTv[index]"></i>
-        </span>
-      </div>
-      <!-- / serie tv -->
+      <!-- / film e serie tv-->
     </div>
     <!-- / contenitore film e serie tv -->
   </div>
 
-
+<!-- collegamento javascript -->
   <script src="js/script.js" charset="utf-8"></script>
 
 </body>
