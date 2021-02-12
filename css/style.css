@@ -50,8 +50,8 @@ header .text-box input {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-direction: column;
-  flex-basis: 200px;
+  /* flex-direction: column;
+  flex-basis: 200px; */
   padding: 20px;
   height: 540px;
   margin: 10px 20px;
@@ -61,6 +61,30 @@ header .text-box input {
 
 .movies-container .movie .poster-empty {
   width: 100%;
+}
+
+.movies-container .movie:hover .images img{
+  display: none;
+}
+
+.movies-container .movie:hover .box-hidden{
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movies-container .movie .box-hidden {
+  width: 400px;
+  height: 100%;
+  background-color: black;
+  color: white;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  display: none;
 }
 
 .movie h3 {
@@ -81,4 +105,9 @@ header .text-box input {
 
 .movie span.vote {
   color: grey;
+}
+
+.box-hidden:last-child p{
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

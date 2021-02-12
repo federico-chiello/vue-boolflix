@@ -29,18 +29,23 @@
     <div class="movies-container container">
       <!-- film e serie tv-->
       <div class="movie" v-for="(movie, index) in moviesAndSeries">
-        <img src="img/poster.png" v-if="movie.poster_path == null"  alt="" class="poster-empty">
-        <img :src="'https://image.tmdb.org/t/p/' + 'w154' + movie.poster_path" alt="" v-else>
-        <h3>{{ movie.title || movie.name}} </h3>
-        <p>{{ movie.original_title || movie.original_name}} </p>
-        <span class="language">{{ movie.original_language }} </span>
-        <img :src="'img/' + movie.original_language + '.png'" alt="" v-if="flag.includes(movie.original_language)" class="flags">
-        <img :src="movie.original_language" alt="" v-else>
-        <span class="vote">{{ Math.ceil(movie.vote_average / 2) }}</span>
-        <span>
-          <i class="fas fa-star" v-for="i in starVote(movie.vote_average)"></i>
-          <i class="far fa-star" v-for="i in 5 - starVote(movie.vote_average)"></i>
-        </span>
+        <div class="images">
+          <img src="img/poster.png" v-if="movie.poster_path == null"  alt="" class="poster-empty">
+          <img :src="'https://image.tmdb.org/t/p/' + 'w342' + movie.poster_path" alt="" v-else>
+        </div>
+        <!-- box delle informazioni -->
+        <div class="box-hidden">
+          <h3>{{ movie.title || movie.name}} </h3>
+          <p>{{ movie.original_title || movie.original_name}} </p>
+          <img :src="'img/' + movie.original_language + '.png'" alt="" v-if="flag.includes(movie.original_language)" class="flags">
+          <img :src="movie.original_language" alt="" v-else>
+          <span>
+            <i class="fas fa-star" v-for="i in starVote(movie.vote_average)"></i>
+            <i class="far fa-star" v-for="i in 5 - starVote(movie.vote_average)"></i>
+          </span>
+          <p>{{ movie.overview }}</p>
+        </div>
+        <!-- / box delle informazioni -->
       </div>
       <!-- / film e serie tv-->
     </div>
