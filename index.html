@@ -26,7 +26,12 @@
     </header>
     <!-- / header -->
     <!-- contenitore film e serie tv -->
-    <div class="movies-container container">
+    <div class="genres">
+      <select class="" name="" v-model="genereSelect">
+        <option value="">All</option>
+      </select>
+    </div>
+    <div class="movies-container">
       <!-- film e serie tv-->
       <div class="movie" v-for="(movie, index) in moviesAndSeries">
         <div class="images">

@@ -11,9 +11,9 @@ body {
 }
 
 .container {
-  width: 1070px;
+  min-width: 670px;
   height: 100%;
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 /* header */
@@ -22,6 +22,14 @@ header {
   height: 70px;
   background: rgb(46, 58, 70);
 }
+
+header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
 header img {
   height: 50px;
   margin-top: 10px;
@@ -29,8 +37,6 @@ header img {
 
 header .text-box{
   line-height: 70px;
-  float: right;
-  margin-bottom: 50px;
 }
 
 header .text-box input {
@@ -38,6 +44,13 @@ header .text-box input {
 }
 
 /* contenitore film e serie tv */
+.genres {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .movies-container {
   display: flex;
   justify-content: center;
@@ -47,14 +60,16 @@ header .text-box input {
 }
 
 .movie {
+  min-height: 300px;
+  min-width: 180px;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-  /* flex-direction: column;
-  flex-basis: 200px; */
+  align-items: flex-start;
+  flex-direction: column;
+  /* flex-basis: 200px; */
   padding: 20px;
   height: 540px;
-  margin: 10px 20px;
+  margin: 10px 10px;
   background: rgb(46, 58, 70);
   text-align: center;
 }
@@ -85,6 +100,11 @@ header .text-box input {
   left: 0;
   padding: 10px;
   display: none;
+  overflow: hidden;
+}
+
+.movies-container .movie .box-hidden i{
+  color: rgb(193, 151, 6);
 }
 
 .movie h3 {
@@ -100,14 +120,13 @@ header .text-box input {
 }
 
 .movie .flags{
-  width: 40%;
+  width: 25%;
 }
 
 .movie span.vote {
   color: grey;
 }
 
-.box-hidden:last-child p{
-  overflow: hidden;
-  text-overflow: ellipsis;
+.box-hidden p:last-child{
+  overflow-y: auto;
 }

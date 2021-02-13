@@ -5,7 +5,9 @@ var app = new Vue({
     apikey:'2440848574e245be0482427477ace718',
     lang:'it-IT',
     moviesAndSeries:[],
-    flag: ['it', 'en', 'es', 'ja', 'ru', 'fr']
+    flag: ['it', 'en', 'es', 'ja', 'ru', 'fr'],
+    genres: ['All'],
+    genereSelect: 'All'
   },
   methods:{
     searchMovieTvSeries(){
