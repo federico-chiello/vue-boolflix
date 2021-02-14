@@ -25,12 +25,14 @@
       </div>
     </header>
     <!-- / header -->
-    <!-- contenitore film e serie tv -->
+    <!-- selezione dei generi -->
     <div class="genres">
-      <select class="" name="" v-model="genereSelect">
-        <option value="">All</option>
+      <select class="" name="" v-model="genreSelect">
+        <option v-for="gen in genresMovie" :value="gen"> {{ gen }}</option>
       </select>
     </div>
+    <!-- / selezione dei generi -->
+    <!-- contenitore film e serie tv -->
     <div class="movies-container">
       <!-- film e serie tv-->
       <div class="movie" v-for="(movie, index) in moviesAndSeries">

@@ -6,8 +6,29 @@ var app = new Vue({
     lang:'it-IT',
     moviesAndSeries:[],
     flag: ['it', 'en', 'es', 'ja', 'ru', 'fr'],
-    genres: ['All'],
-    genereSelect: 'All'
+    genre: [],
+    genresMovie: ['All'],
+    genreSelect: 'All'
+  },
+  mounted(){
+    axios
+      .get('https://api.themoviedb.org/3/genre/movie/list', {
+        params:{
+          api_key: this.apikey,
+          language: this.lang
+        }
+      })
+      .then((result) => {
+        this.genre = result.data.genres;
+        // console.log(this.genre);
+        this.genre.forEach((item,i) =>{
+          if(!this.genresMovie.includes(item.name)) {
+            this.genresMovie.push(item.name);
+          }
+          // console.log(this.genresMovie);
+        });
+      })
+    .catch((error) => alert('errore'));
   },
   methods:{
     searchMovieTvSeries(){
